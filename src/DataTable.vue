@@ -244,6 +244,7 @@ function deleteElements(dt: Api) {
 
 	for (var i = 0; i < keys.length; i++) {
 		if (keys[i].indexOf(id + ',') === 0) {
+			render(null, elements[keys[i]]); // Ensure vnode to be unmounted correctly
 			delete elements[keys[i]];
 		}
 	}
